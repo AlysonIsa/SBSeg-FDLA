@@ -1,0 +1,1 @@
+# SBSeg-demo-Autocorrelacao-Para-Taxa-de-Atualizacao-Ataque-Tempest
