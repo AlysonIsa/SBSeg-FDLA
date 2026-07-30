@@ -8,8 +8,8 @@ Este repositório contém os scripts em GNU Octave para testar e validar o cálc
 A execução exige o **GNU Octave** e o pacote de processamento de sinais (`signal`), necessário para a função `xcorr`. 
 
 ```bash
-   sudo apt update
-   sudo apt install octave octave-signal
+sudo apt update
+sudo apt install octave octave-signal
 ```
 
 O pacote `signal` possui dependências internas. Abra o terminal interativo do Octave (digitando `octave` no terminal) e instale primeiro o pacote `control` e depois o `signal`:
