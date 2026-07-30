@@ -12,11 +12,9 @@ sudo apt update
 sudo apt install octave octave-signal
 ```
 
-O pacote `signal` possui dependências internas. Abra o terminal interativo do Octave (digitando `octave` no terminal) e instale primeiro o pacote `control` e depois o `signal`:
+Agora abra o Octave. Antes de rodar os scripts, basta carregar a biblioteca na memória:
 
 ```octave
-pkg install -forge control
-pkg install -forge signal
 pkg load signal
 ```
 
