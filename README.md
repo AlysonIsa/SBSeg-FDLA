@@ -5,8 +5,10 @@ Complemento prático para o artigo: Estimação Rápida de Taxa de Quadros em At
 Este repositório contém os scripts em GNU Octave para testar e validar o cálculo da Autocorrelação Linear Discreta (DLA) e da Autocorrelação Linear Discreta Rápida (F-DLA) apresentados na pesquisa.
 
 ## Pré-requisitos
-A execução exige o **GNU Octave** e o pacote de processamento de sinais. No terminal do Octave, instale e carregue a dependência:
+A execução exige o **GNU Octave** e o pacote de processamento de sinais. Como o pacote `signal` possui dependências, instale primeiro o pacote `control`. No terminal do Octave, execute os comandos abaixo:
+
 ```octave
+pkg install -forge control
 pkg install -forge signal
 pkg load signal
 ```
