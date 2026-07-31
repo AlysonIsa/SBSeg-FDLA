@@ -27,7 +27,7 @@ Os dados de entrada são amostras complexas de sinal de vídeo capturadas por SD
 ```bash
 sudo apt install git-lfs
 git lfs install
-git clone git@github.com:AlysonIsa/SBSeg-demo-Autocorrelacao-Para-Taxa-de-Atualizacao-Ataque-Tempest.git
+git clone git@github.com:AlysonIsa/SBSeg-FDLA.git
 ```
 
 *(Se você já clonou e os arquivos `.dat` estão com apenas alguns bytes de tamanho, execute `git lfs pull` dentro da pasta do repositório para forçar o download dos arquivos reais).*
