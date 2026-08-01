@@ -44,6 +44,3 @@ Os algoritmos operam separadamente em seus respectivos scripts (`dla.m` e `fdla.
    - Execute o comando `dla` para rodar o algoritmo convencional (complexidade $O(N \log N)$).
    - Execute o comando `fdla` para rodar o algoritmo otimizado proposto no artigo (complexidade $O(N)$).
 4. **Análise de Resultados:** A execução informará no terminal a taxa de quadros (FRR) identificada, o atraso (*lag*) correspondente e gerará um gráfico com a autocorrelação normalizada do sinal.
-
-## Licença
-Distribuído sob a licença MIT.
