@@ -1,4 +1,4 @@
-# SBSeg-demo-Autocorrelacao-Para-Taxa-de-Atualizacao-Ataque-Tempest
+# SBSeg - Estimação Rápida de Taxa de Quadros em Ataques de Canais Laterais Eletromagnéticos de Sistemas Públicos.
 
 Complemento prático para o artigo [1], incluindo acessórios para replicação de resultados não reportados no artigo por limitações de espaço. Os experimentos tem como objetivo testar e validar o cálculo da Autocorrelação Linear Discreta (DLA) e da Autocorrelação Linear Discreta Rápida (F-DLA) apresentados na pesquisa.
 
