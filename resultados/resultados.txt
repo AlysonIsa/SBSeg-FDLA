@@ -1,0 +1,19 @@
+Detalhamento do cálculo dos tempos médio de execução, em segundos, de cada método  (seção 4 de [1])
+
+         F-DLA        DLA (GNU Octave xcorr)
+         0.287508     0.645505
+         0.325868     0.6984
+         0.306397     0.713468
+         0.283997     0.649656
+         0.286545     0.663173
+         0.280595     0.646336
+         0.314151     0.627338
+         0.296182     0.674486
+         0.309838     0.642311
+         0.305254     0.685407
+Média    0.299634     0.664608
+Desvio   0.014973     0.027628
+IC (95%) 0.010711     0.019764
+
+
+[1]  ISALUSKI, Alyson; TEODORO, Leonardo; Cardoso, Kleber Vieira; OLIVEIRA-JR, Antonio; QUEIROZ, Saulo. Ataques de Canais Laterais Eletromagnéticos Ameaçam Seções Eleitorais Eletrônicas? Cenários e Recomendações. In: SIMPÓSIO BRASILEIRO DE SEGURANÇA DA INFORMAÇÃO E DE SISTEMAS COMPUTACIONAIS (SBSeg), 2026.
