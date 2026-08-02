@@ -355,24 +355,70 @@ line([melhor_lag_time_fdla melhor_lag_time_fdla], ...
      'linestyle', '-', ...
      'linewidth', 2, ...
      'displayname', 'F-DLA');
-set(legend, 'fontsize', 12);
-legend boxoff
-legend('show');
+% A legenda será posicionada após a criação do eixo superior.
 
 %yl = ylim;
 yl = ylim;
 
 text(melhor_lag_time_fdla, ...
      yl(1) + 0.05*(yl(2)-yl(1)), ...
-     sprintf('%.6f', melhor_lag_time_fdla), ...
+     sprintf('%.0f Hz', 1/melhor_lag_time_fdla), ...
      'horizontalalignment', 'left', ...
      'verticalalignment', 'bottom', ...
      'color', 'r');
 
-xlabel('Lag temporal \tau_s (s)');
-ylabel('Auto-correlação R(\tau) (normalizado)');
-title('Função de Auto-Correlação de Sinal TEMPEST VGA 1280x720@60.');
-grid on;
+% Eixo inferior: lag temporal
+ax1 = gca;
+
+% Reserva espaço acima da área de plotagem para as marcas e o rótulo do
+% eixo superior. O vetor é [esquerda, inferior, largura, altura].
+pos1 = get(ax1, 'position');
+pos1(2) = pos1(2) + 0.01;
+pos1(4) = pos1(4) - 0.11;
+set(ax1, 'position', pos1, 'tickdir', 'out');
+
+xlabel(ax1, 'Lag temporal \tau_s (s)');
+ylabel(ax1, 'Auto-correlação R(\tau) (normalizado)');
+% O título foi removido para evitar conflito com o eixo superior; a legenda
+% da figura no artigo já descreve o cenário experimental.
+grid(ax1, 'on');
+
+% Eixo superior: FRR equivalente f_v = 1/tau_s.
+% As frequências são listadas em ordem decrescente para que as posições
+% 1/f_v apareçam em ordem crescente no eixo x.
+frr_ticks = [100 85 75 60 50 40 30 25];
+tau_ticks = 1 ./ frr_ticks;
+
+% Mantém somente marcas contidas no intervalo exibido.
+xl = xlim(ax1);
+valid_ticks = (tau_ticks >= xl(1)) & (tau_ticks <= xl(2));
+frr_ticks = frr_ticks(valid_ticks);
+tau_ticks = tau_ticks(valid_ticks);
+
+% Cria um segundo eixo transparente, sincronizado com o eixo inferior.
+pos = get(ax1, 'position');
+ax2 = axes('position', pos, ...
+           'color', 'none', ...
+           'xaxislocation', 'top', ...
+           'yaxislocation', 'right', ...
+           'ytick', [], ...
+           'box', 'off');
+set(ax2, 'xlim', xl, ...
+         'xtick', tau_ticks, ...
+         'xticklabel', arrayfun(@(f) sprintf('%g', f), frr_ticks, ...
+                               'uniformoutput', false), ...
+         'fontsize', get(ax1, 'fontsize'), ...
+         'tickdir', 'out');
+xlabel(ax2, 'FRR equivalente f_v (Hz)');
+
+% Garante que o eixo principal permaneça ativo e posiciona a legenda
+% dentro da área do gráfico, no canto superior direito.
+axes(ax1);
+hleg = legend(ax1, 'show');
+set(hleg, ...
+    'location', 'northeast', ...
+    'fontsize', 12, ...
+    'box', 'off');
 
 %printf('Peak marker plotted at lag %.6g s (sample %d)\n', lag_time2, lag_samples2);
 printf('Peak F-DLA marker plotted at lag %.6g s (sample %d)\n',  melhor_lag_time_fdla, melhor_lag_fdla);
