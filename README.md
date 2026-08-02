@@ -1,8 +1,8 @@
 # SBSeg-demo-Autocorrelacao-Para-Taxa-de-Atualizacao-Ataque-Tempest
 
-Complemento prático para o artigo: Estimação Rápida de Taxa de Quadros em Ataques de Canais Laterais Eletromagnéticos de Sistemas Públicos.
+Complemento prático para o artigo [1], incluindo acessórios para replicação de resultados não reportados no artigo por limitações de espaço. Os experimentos tem como objetivo testar e validar o cálculo da Autocorrelação Linear Discreta (DLA) e da Autocorrelação Linear Discreta Rápida (F-DLA) apresentados na pesquisa.
 
-Este repositório contém os scripts em GNU Octave para testar e validar o cálculo da Autocorrelação Linear Discreta (DLA) e da Autocorrelação Linear Discreta Rápida (F-DLA) apresentados na pesquisa.
+[1] ISALUSKI, Alyson; TEODORO, Leonardo; V. CARDOSO, Kleber; OLIVEIRA-JR, Antonio; QUEIROZ, Saulo. Estimação Rápida de Taxa de Quadros em Ataques de Canais Laterais Eletromagnéticos de Sistemas Públicos. In: SIMPÓSIO BRASILEIRO DE SEGURANÇA DA INFORMAÇÃO E DE SISTEMAS COMPUTACIONAIS (SBSeg), 2026.
 
 ## Pré-requisitos
 A execução exige o **GNU Octave** e o pacote de processamento de sinais (`signal`), necessário para a função `xcorr`. 
@@ -44,3 +44,9 @@ Os algoritmos operam separadamente em seus respectivos scripts (`dla.m` e `fdla.
    - Execute o comando `dla` para rodar o algoritmo convencional (complexidade $O(N \log N)$).
    - Execute o comando `fdla` para rodar o algoritmo otimizado proposto no artigo (complexidade $O(N)$).
 4. **Análise de Resultados:** A execução informará no terminal a taxa de quadros (FRR) identificada, o atraso (*lag*) correspondente e gerará um gráfico com a autocorrelação normalizada do sinal.
+
+## Produção de outros arquivos TEMPEST
+
+O leitor poderá aplicar as análises DLA e F-DLA com arquivos contendo sinais TEMPEST referentes a outros ambientes gerados de acordo com o repositório em [2].
+
+[2] BRITO, Lucas; TEODORO, Leonardo; TOMAZ, Pedro; ISALUSKI, Alyson; HYEDA, Leandro; OLIVEIRA-JR, Antonio; QUEIROZ, Saulo. Ataques de Canais Laterais Eletromagnéticos Ameaçam Seções Eleitorais Eletrônicas? Cenários e Recomendações. In: SIMPÓSIO BRASILEIRO DE SEGURANÇA DA INFORMAÇÃO E DE SISTEMAS COMPUTACIONAIS (SBSeg), 2026.
